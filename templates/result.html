@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Include Font Awesome -->
+    <style>
+        /* Additional styles for the result page */
+        .result-container {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for contrast */
+            padding: 30px; /* Padding around the result box */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+            max-width: 400px; /* Max width of the container */
+            margin: 40px auto; /* Centering the container */
+            text-align: center; /* Center text */
+        }
+
+        .prediction-text {
+            font-size: 24px; /* Larger font for the prediction */
+            color: #007bff; /* Primary color */
+            margin-bottom: 20px; /* Space below the prediction text */
+        }
+
+        .back-link {
+            display: inline-block; /* Inline block for spacing */
+            margin-top: 20px; /* Space above the link */
+            color: #007bff; /* Link color */
+            text-decoration: none; /* Remove underline */
+            font-weight: bold; /* Bold text */
+        }
+
+        .back-link:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Predicted Electricity Price</h2>
+    <div class="result-container">
+        <p class="prediction-text"><i class="fas fa-dollar-sign"></i> The predicted price is: <strong>{{ prediction }}</strong></p> <!-- Enhanced prediction display -->
+        <p>Thank you for using our electricity price prediction service!</p>
+        <a class="back-link" href="/"><i class="fas fa-arrow-left"></i> Go back</a> <!-- Back link with icon -->
+    </div>
+</body>
+</html>
